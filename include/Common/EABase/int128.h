@@ -23,7 +23,7 @@
 // EA_INT128_ALIGNAS
 //
 #if EA_INT128_INTRINSIC_AVAILABLE && !defined(EA_COMPILER_NO_ALIGNAS)
-	#define EA_INT128_ALIGNAS alignas(__extension__ unsigned __int128)
+	#define EA_INT128_ALIGNAS alignas(unsigned __extension__ __int128)
 #else
 	#define EA_INT128_ALIGNAS
 #endif
@@ -78,7 +78,7 @@ struct EA_INT128_ALIGNAS int128_t_base
 	EA_CONSTEXPR explicit operator long double() const;
 #if EA_INT128_INTRINSIC_AVAILABLE
 	EA_CONSTEXPR explicit operator __extension__ __int128() const;
-	EA_CONSTEXPR explicit operator __extension__ unsigned __int128() const;
+	EA_CONSTEXPR explicit operator unsigned __extension__ __int128() const;
 #endif
 
 	// Math operators
@@ -285,7 +285,7 @@ EA_CONSTEXPR inline int128_t_base::operator double() const             { return 
 EA_CONSTEXPR inline int128_t_base::operator long double() const        { return static_cast<long double>(Low()); }
 #if EA_INT128_INTRINSIC_AVAILABLE
 EA_CONSTEXPR inline int128_t_base::operator __extension__ __int128() const           { return static_cast<__extension__ __int128>(Low()); }
-EA_CONSTEXPR inline int128_t_base::operator __extension__ unsigned __int128() const  { return static_cast<__extension__ unsigned __int128>(Low()); }
+EA_CONSTEXPR inline int128_t_base::operator unsigned __extension__ __int128() const  { return static_cast<unsigned __extension__ __int128>(Low()); }
 #endif
 
 inline void int128_t_base::SetBit(int nIndex, int value)
