@@ -23,7 +23,10 @@
 // EA_INT128_ALIGNAS
 //
 #if EA_INT128_INTRINSIC_AVAILABLE && !defined(EA_COMPILER_NO_ALIGNAS)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wpedantic"
 	#define EA_INT128_ALIGNAS alignas(unsigned __int128)
+#pragma GCC diagnostic pop
 #else
 	#define EA_INT128_ALIGNAS
 #endif
