@@ -2812,7 +2812,7 @@ int TestEACompilerTraits()
 	return nErrorCount;
 }
 #if defined(EA_COMPILER_MSVC) && EA_COMPILER_VERSION >= 1900	// VS2015+
-	EA_RESTORE_VC_WARNING();
+	EA_RESTORE_VC_WARNING()
 #endif
 
 
