@@ -43,6 +43,8 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 // uint128_t_base
 //
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wpedantic"
 struct EA_INT128_ALIGNAS int128_t_base
 {
 	// Constructors / destructors
@@ -134,6 +136,7 @@ protected:
 		uint64_t mPart1;  // Least significant byte.
 	#endif
 };
+#pragma GCC diagnostic pop
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 // int128_t
